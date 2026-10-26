@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data & Method | Energy Consumption Analytics</title><meta name="description" content="Energy Consumption Analytics - dashboard project by Priyal Sood">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="wrap"><span class="eyebrow">Energy Consumption Analytics</span><h1>Data &amp; Method</h1><p>Where the data came from and how it was prepared.</p></div></section>
+<main><div class="wrap">
+
+<section class="block"><span class="eyebrow dark">Data source</span><h2>Kaggle dataset</h2>
+<div class="card"><p style="color:var(--ink)">The project data comes from a public energy consumption dataset on <b>Kaggle</b>. After cleaning, the working file is <b>clean_data.csv</b>: 60,000 meter readings with 19 columns, covering 1 January 2024 to 31 December 2025, 50 consumers and 10 regions.</p></div></section>
+<section class="block"><span class="eyebrow dark">Workflow</span><h2>Cleaning and preprocessing</h2>
+<div class="steps">
+<div class="card step"><h3>1. Download from Kaggle</h3><p>The raw dataset was downloaded from Kaggle as the starting point.</p></div>
+<div class="card step"><h3>2. Load and prepare in MySQL Workbench</h3><p>The data was loaded into MySQL Workbench. SQL queries were used to inspect the tables and combine the related information (readings, meters, consumers, regions and tariffs, visible as the ID columns in the final file) into one table.</p></div>
+<div class="card step"><h3>3. Clean and check in Google Colab</h3><p>In Google Colab the data was checked with Python for missing values, duplicate rows, data types and date formats, then exported as <b>clean_data.csv</b>.</p></div>
+<div class="card step"><h3>4. Build the dashboard</h3><p>The clean file was used to build the dashboard KPIs and charts. This website reads the same file and calculates every figure from it.</p></div></div></section>
+<section class="block"><span class="eyebrow dark">Quality checks</span><h2>Results of the checks on the final file</h2>
+<div class="card"><ul class="ticks"><li>60,000 rows; every Consumption_ID is unique.</li><li>No missing values in any column and no duplicate rows.</li>
+<li>Units_Consumed always equals Peak_Units + OffPeak_Units.</li><li>Dates use one consistent format (YYYY-MM-DD) and cover 731 days.</li>
+<li>Each consumer has exactly one consumer type.</li></ul>
+<div class="callout">Note: tariff slab names are used exactly as they appear in the data. In this file the “201-300 Units” slab holds readings of 301–600 units, the “101-200 Units” slab holds 101–300 and “0-100 Units” holds 50–100.</div></div></section>
+<section class="block"><span class="eyebrow dark">Data dictionary</span><h2>Columns used on this website</h2>
+<div class="card scroll-x"><table><tr><th>Column</th><th>Meaning</th></tr>
+<tr><td>Reading_Date</td><td>Date of the meter reading (monthly and yearly views)</td></tr>
+<tr><td>Units_Consumed</td><td>Units used in the reading</td></tr>
+<tr><td>Peak_Units / OffPeak_Units</td><td>Units used in peak / off-peak hours</td></tr>
+<tr><td>Total_Bill</td><td>Bill amount of the reading (₹)</td></tr>
+<tr><td>Consumer_ID, Consumer_Type</td><td>Consumer and its type: Residential, Commercial or Industrial</td></tr>
+<tr><td>Region_Name</td><td>One of 10 regions</td></tr>
+<tr><td>Tariff_Slab</td><td>0-100, 101-200 or 201-300 Units</td></tr></table></div></section>
+<section class="block"><span class="eyebrow dark">Metrics</span><h2>How each number is calculated</h2>
+<div class="grid cols-2"><div class="card"><ul class="clean"><li><b>Units consumed:</b> sum of Units_Consumed.</li><li><b>Total bill:</b> sum of Total_Bill.</li><li><b>Avg bill per reading:</b> total bill ÷ number of readings.</li></ul></div>
+<div class="card"><ul class="clean"><li><b>Active consumers:</b> number of different Consumer_IDs in the selection.</li><li><b>Peak share:</b> Peak_Units ÷ Units_Consumed.</li><li><b>Average cost per unit:</b> total bill ÷ units consumed.</li></ul></div></div></section>
+</div></main>
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+</body></html>

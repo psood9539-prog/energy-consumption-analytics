@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About the Project | Energy Consumption Analytics</title><meta name="description" content="Energy Consumption Analytics - dashboard project by Priyal Sood">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="wrap"><span class="eyebrow">Energy Consumption Analytics</span><h1>About the Project</h1><p>Why this dashboard was built, what it answers and the tools behind it.</p></div></section>
+<main><div class="wrap">
+
+<section class="block"><span class="eyebrow dark">Problem statement</span><h2>The problem</h2>
+<div class="card"><p style="font-size:1.05rem;color:var(--ink)">Electricity providers record thousands of meter readings, but raw rows of units and bills do not show where demand is concentrated, which consumer groups drive billing, or how much of the load falls in peak hours. Without a clear summary it is hard to plan supply and understand billing. This project turns 60,000 readings (January 2024 – December 2025) into one dashboard that answers these questions quickly.</p></div></section>
+<section class="block"><span class="eyebrow dark">Objectives</span><h2>What the project aims to do</h2>
+<div class="grid cols-2"><div class="card"><ul class="ticks">
+<li>Show total units consumed and billing as clear KPIs.</li><li>Track the monthly consumption trend across 2024 and 2025.</li><li>Compare regions and consumer types (Residential, Commercial, Industrial).</li></ul></div>
+<div class="card"><ul class="ticks"><li>Measure how much use falls in peak hours compared with off-peak hours.</li><li>Explain how billing is spread across the three tariff slabs.</li><li>Identify the top 10 consumers by units and share findings that the data supports.</li></ul></div></div></section>
+<section class="block"><span class="eyebrow dark">Tools used</span><h2>Tools and technologies</h2>
+<div class="grid cols-4">
+<div class="card feature"><div class="ico">🗂️</div><h3>Kaggle</h3><p>Source of the energy consumption dataset.</p></div>
+<div class="card feature"><div class="ico">🛢️</div><h3>MySQL Workbench</h3><p>Loading, checking and preparing the data with SQL.</p></div>
+<div class="card feature"><div class="ico">🐍</div><h3>Google Colab</h3><p>Python-based cleaning, checks and export of the final CSV.</p></div>
+<div class="card feature"><div class="ico">🌐</div><h3>Website stack</h3><p>HTML, CSS, JavaScript, Chart.js for charts and Node.js for the data API.</p></div></div></section>
+<section class="block"><span class="eyebrow dark">Scope</span><h2>Dataset at a glance</h2>
+<div class="grid cols-4"><div class="card kpi"><div class="label">Readings</div><div class="value">60,000</div></div><div class="card kpi"><div class="label">Consumers</div><div class="value">50</div></div><div class="card kpi"><div class="label">Regions</div><div class="value">10</div></div><div class="card kpi"><div class="label">Period</div><div class="value" style="font-size:1.25rem">Jan 2024 – Dec 2025</div></div></div></section>
+</div></main>
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+</body></html>

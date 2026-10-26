@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insights | Energy Consumption Analytics</title><meta name="description" content="Energy Consumption Analytics - dashboard project by Priyal Sood">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="wrap"><span class="eyebrow">Energy Consumption Analytics</span><h1>Insights</h1><p>Findings and suggestions calculated from all 60,000 readings (no filters applied).</p></div></section>
+<main><div class="wrap">
+
+<section class="block"><span class="eyebrow dark">Key findings</span><h2>What the data shows</h2><p class="sub">Each finding below is calculated live from the data file.</p>
+<div id="findings" class="grid cols-2"><div class="card loading"><div class="spinner"></div>Calculating…</div></div></section>
+<section class="block"><span class="eyebrow dark">Recommendations</span><h2>Suggestions supported by the data</h2><p class="sub">Each suggestion is tied to a figure from the dataset.</p>
+<div id="recs" class="grid cols-2"></div>
+<div class="callout"><b>Limits of this analysis:</b> the data covers two years (2024–2025) and has no time-of-day, weather or cost-of-supply information, so the suggestions describe what the readings show and are not forecasts.</div></section>
+</div></main>
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+<script src="js/insights.js"></script>
+</body></html>

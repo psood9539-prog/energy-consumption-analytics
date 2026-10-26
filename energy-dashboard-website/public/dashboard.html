@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | Energy Consumption Analytics</title><meta name="description" content="Energy Consumption Analytics - dashboard project by Priyal Sood">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="site-header"></div>
+<section class="page-hero"><div class="wrap"><span class="eyebrow">Energy Consumption Analytics</span><h1>Dashboard</h1><p>Explore units, billing and peak load. Pick a filter and every KPI and chart updates.</p></div></section>
+<main><div class="wrap">
+
+<div class="card"><div class="filters">
+<label>Region<select id="f-region"><option value="">All</option></select></label>
+<label>Consumer type<select id="f-type"><option value="">All</option></select></label>
+<label>Tariff slab<select id="f-slab"><option value="">All</option></select></label>
+<label>Year<select id="f-year"><option value="">All</option></select></label>
+<button class="btn blue" id="reset" type="button">Reset filters</button></div></div>
+<div id="status" class="loading"><div class="spinner"></div>Loading dashboard data…</div>
+<div id="kpis" class="kpis flat"></div>
+<div id="charts" class="grid charts" hidden>
+<div class="card chart-card"><h3>Monthly consumption trend</h3><p>Total units by month</p><div class="chart-box"><canvas id="c-monthly"></canvas></div></div>
+<div class="card chart-card"><h3>Consumer type split</h3><p>Total units by consumer type</p><div class="chart-box"><canvas id="c-type"></canvas></div></div>
+<div class="card chart-card"><h3>Peak vs off-peak units</h3><p>Units by calendar month (both years combined)</p><div class="chart-box"><canvas id="c-peak"></canvas></div></div>
+<div class="card chart-card"><h3>Consumption by region</h3><p>Total units by region</p><div class="chart-box"><canvas id="c-region"></canvas></div></div>
+<div class="card chart-card"><h3>Consumption by tariff slab</h3><p>Total units by tariff slab</p><div class="chart-box"><canvas id="c-slab"></canvas></div></div>
+<div class="card chart-card"><h3>Top 10 consumers</h3><p>Total units by Consumer ID</p><div class="chart-box"><canvas id="c-top"></canvas></div></div></div>
+</div></main>
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/dashboard.js"></script>
+</body></html>
